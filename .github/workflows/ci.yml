@@ -1,0 +1,26 @@
+name: CI Workflow
+
+# Policies run job in branches
+on: 
+  push: 
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+
+  # Workflow reference => (NodeJS) pipeline base CI
+  golden_ci:
+    name: "Continuous Integration"
+    uses: devsecops-lab-ciandt/devsecops-node-workflows/.github/workflows/base-ci.yml@main
+    with:
+      globals_package_manager: "npm"
+      globals_node_version: "18.20.6"
+      job_install_deps_runner_name: "arc-primary"
+      job_install_deps_container_runner_image: "node:lts-buster-slim"
+      job_build_app_runner_name: "arc-primary"
+      job_build_app_container_runner_image: "node:lts-buster-slim"
+      job_build_reusable_build_args: "run build"
