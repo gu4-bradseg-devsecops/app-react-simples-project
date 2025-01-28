@@ -14,7 +14,7 @@ jobs:
   # Workflow reference => (NodeJS) pipeline base CI
   golden_ci:
     name: "Continuous Integration"
-    uses: devsecops-lab-ciandt/devsecops-node-workflows/.github/workflows/base-ci.yml@main
+    uses: devsecops-lab-ciandt/devsecops-node-workflows/.github/workflows-templates/base-ci.yml@main
     with:
       globals_package_manager: "npm"
       globals_node_version: "18.20.6"
