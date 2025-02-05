@@ -22,3 +22,4 @@ jobs:
       job_install_deps_container_runner_image: "node:lts-buster-slim"
       job_build_app_container_runner_image: "node:lts-buster-slim"
       job_build_app_build_args: "run build"
+      job_build_helm_container_runner_image: "alpine:3.14"
