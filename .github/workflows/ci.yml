@@ -15,7 +15,7 @@ concurrency:
 
 jobs:
   teste_env:
-    name: Build container image
+    name: Teste vars in environment
     runs-on: arc-primary
     container:
       image: docker:latest
