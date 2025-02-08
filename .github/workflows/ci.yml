@@ -24,5 +24,3 @@ jobs:
       job_build_app_build_args: "run build"
       job_build_image_container_runner_image: "docker:latest"
       job_build_helm_container_runner_image: "docker:latest"
-      job_build_helm_docker_registry_nexus_url: "http://10.0.200.18:8081/repository/docker-hosted"
-      job_build_helm_nexus_repository_helm_url: "http://10.0.200.18:8081/repository/helm-hosted"
