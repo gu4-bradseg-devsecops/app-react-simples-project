@@ -6,36 +6,22 @@ on:
     branches:
       - main
 
-env:
-  TESTE: ${{ secrets.DOCKER_REGISTRY_USERNAME }}
-
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  teste_env:
-    name: Teste vars in environment
-    runs-on: arc-primary
-    container:
-      image: docker:latest
-    steps:
-      - name: Debug Environment Variables
-        run: | 
-          env
-          echo "---------------"
-          echo $TESTE
-
   # Workflow reference => (NodeJS) pipeline base CI
-  # golden_ci:
-  #   name: "Continuous Integration"
-  #   uses: devsecops-lab-ciandt/devsecops-node-workflows/.github/workflows/base-ci.yml@main
-  #   with:
-  #     globals_package_manager: "npm"
-  #     globals_node_version: "18.20.6"
-  #     globals_runner_name: "arc-primary"
-  #     job_install_deps_container_runner_image: "node:lts-buster-slim"
-  #     job_build_app_container_runner_image: "node:lts-buster-slim"
-  #     job_build_app_build_args: "run build"
-  #     job_build_image_container_runner_image: "docker:latest"
-  #     job_build_helm_container_runner_image: "docker:latest"
+  golden_ci:
+    name: "Continuous Integration"
+    uses: devsecops-lab-ciandt/devsecops-node-workflows/.github/workflows/base-ci.yml@main
+    with:
+      globals_package_manager: "npm"
+      globals_node_version: "18.20.6"
+      globals_runner_name: "arc-primary"
+      job_install_deps_container_runner_image: "node:lts-buster-slim"
+      job_build_app_container_runner_image: "node:lts-buster-slim"
+      job_build_app_build_args: "run build"
+      job_build_image_container_runner_image: "docker:latest"
+      job_build_helm_container_runner_image: "docker:latest"
+      job_upload_artifacts_container_runner_image: "docker:latest"
