@@ -7,7 +7,7 @@ on:
       - main
 
 env:
-  TESTE: ${{ vars.DOCKER_REGISTRY_URL }}
+  TESTE: ${{ secrets.DOCKER_REGISTRY_USERNAME }}
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -21,7 +21,10 @@ jobs:
       image: docker:latest
     steps:
       - name: Debug Environment Variables
-        run: env
+        run: | 
+          env
+          echo "---------------"
+          echo "TESTE"
 
   # Workflow reference => (NodeJS) pipeline base CI
   # golden_ci:
