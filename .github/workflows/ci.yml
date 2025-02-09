@@ -24,7 +24,7 @@ jobs:
         run: | 
           env
           echo "---------------"
-          echo "TESTE"
+          echo $TESTE
 
   # Workflow reference => (NodeJS) pipeline base CI
   # golden_ci:
