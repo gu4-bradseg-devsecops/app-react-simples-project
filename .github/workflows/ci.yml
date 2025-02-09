@@ -29,4 +29,4 @@ jobs:
       job_build_app_build_args: "run build"
       job_build_image_container_runner_image: "docker:latest"
       job_build_helm_container_runner_image: "docker:latest"
-      # job_upload_artifacts_container_runner_image: "docker:latest"
+      job_upload_artifacts_container_runner_image: "docker:latest"
