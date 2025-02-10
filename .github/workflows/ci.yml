@@ -28,9 +28,7 @@ jobs:
       job_build_image_container_runner_image: "docker:latest"
       job_build_helm_container_runner_image: "docker:latest"
       job_upload_artifacts_container_runner_image: "docker:latest"
-      # job_upload_artifacts_docker_registry_url: ${{ env.DOCKER_REGISTRY_URL }}
-      # job_upload_artifacts_docker_registry_username: ${{ env.DOCKER_REGISTRY_USERNAME }}
-      # job_upload_artifacts_docker_registry_password: ${{ env.DOCKER_REGISTRY_PASSWORD }}
+      job_upload_artifacts_docker_registry_url: ${{ vars.DOCKER_REGISTRY_URL }}
     secrets:
       job_upload_artifacts_docker_registry_username: ${{ secrets.DOCKER_REGISTRY_USERNAME }}
       job_upload_artifacts_docker_registry_password: ${{ secrets.DOCKER_REGISTRY_PASSWORD }}
