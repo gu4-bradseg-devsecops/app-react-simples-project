@@ -32,5 +32,5 @@ jobs:
       # job_upload_artifacts_docker_registry_username: ${{ env.DOCKER_REGISTRY_USERNAME }}
       # job_upload_artifacts_docker_registry_password: ${{ env.DOCKER_REGISTRY_PASSWORD }}
     secrets:
-      DOCKER_REGISTRY_USERNAME: ${{ secrets.DOCKER_REGISTRY_USERNAME }}
-      DOCKER_REGISTRY_PASSWORD: ${{ secrets.DOCKER_REGISTRY_PASSWORD }}
+      job_upload_artifacts_docker_registry_username: ${{ secrets.DOCKER_REGISTRY_USERNAME }}
+      job_upload_artifacts_docker_registry_password: ${{ secrets.DOCKER_REGISTRY_PASSWORD }}
