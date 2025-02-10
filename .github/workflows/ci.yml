@@ -26,6 +26,9 @@ jobs:
       job_build_helm_container_runner_image: "docker:latest"
       job_upload_artifacts_container_runner_image: "docker:latest"
       job_upload_artifacts_docker_registry_url: acrdemoarc.azurecr.io
+      job_upload_artifacts_helm_repository_url: acrdemoarc.azurecr.io
     secrets:
       job_upload_artifacts_docker_registry_username: ${{ secrets.DOCKER_REGISTRY_USERNAME }}
       job_upload_artifacts_docker_registry_password: ${{ secrets.DOCKER_REGISTRY_PASSWORD }}
+      job_upload_artifacts_helm_repository_username: ${{ secrets.HELM_REPOSITORY_USERNAME }}
+      job_upload_artifacts_helm_repository_password: ${{ secrets.HELM_REPOSITORY_PASSWORD }}
