@@ -19,6 +19,9 @@ jobs:
       globals_package_manager: "npm"
       globals_node_version: "18.20.6"
       globals_runner_name: "arc-primary"
+      globals_version_app: "2.0.0"
+
+      # Temporary
       job_install_deps_container_runner_image: "node:lts-buster-slim"
       job_build_app_container_runner_image: "node:lts-buster-slim"
       job_build_app_build_args: "run build"
@@ -28,6 +31,7 @@ jobs:
       job_upload_artifacts_docker_registry_url: acrdemoarc.azurecr.io
       job_upload_artifacts_helm_repository_url: acrdemoarc.azurecr.io
       job_upload_application_container_runner_image: "alpine:3.14"
+
     secrets:
       job_upload_artifacts_docker_registry_username: ${{ secrets.DOCKER_REGISTRY_USERNAME }}
       job_upload_artifacts_docker_registry_password: ${{ secrets.DOCKER_REGISTRY_PASSWORD }}
