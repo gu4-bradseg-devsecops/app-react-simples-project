@@ -19,7 +19,7 @@ jobs:
       globals_package_manager: "npm"
       globals_node_version: "18.20.6"
       globals_runner_name: "arc-primary"
-      globals_version_app: "2.0.0"
+      globals_version_app: "1.0.0"
 
       # Temporary
       job_install_deps_container_runner_image: "node:lts-buster-slim"
