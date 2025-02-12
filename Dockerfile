@@ -1,8 +1,10 @@
 FROM docker.io/library/nginx:alpine
 
-RUN rm /etc/nginx/conf.d/default.conf; rm /usr/share/nginx/html
+RUN rm /etc/nginx/conf.d/default.conf
 
 COPY nginx/default.conf /etc/nginx/conf.d
+
+RUN rm /usr/share/nginx/html
 
 COPY build /usr/share/nginx/html
 
